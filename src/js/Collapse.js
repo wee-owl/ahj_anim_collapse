@@ -28,7 +28,13 @@ export default class Collapse {
   startAnim() {
     this.btn.addEventListener('click', (e) => {
       e.preventDefault();
-      this.wrap.classList.toggle('active');
+      if (!this.wrap.classList.contains('active')) {
+        this.wrap.classList.add('active');
+        this.wrap.style.maxHeight = `${this.wrap.scrollHeight}px`;
+      } else {
+        this.wrap.classList.remove('active');
+        this.wrap.style.maxHeight = '';
+      }
     });
   }
 }
