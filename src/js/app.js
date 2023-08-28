@@ -1,4 +1,4 @@
 import Collapse from './Collapse';
 
 const anim = new Collapse(document.body);
-anim.init();
+anim.startAnim();
